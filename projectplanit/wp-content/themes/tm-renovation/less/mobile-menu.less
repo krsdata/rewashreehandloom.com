@@ -1,0 +1,45 @@
+@import (reference) "_elements";
+
+/*--------------------------------------------
+Mobile Menu
+----------------------------------------------*/
+#open-left, #open-right {
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.snap-drawer {
+  .social-menu {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.snap-drawers {
+  background-color: #fff;
+  @media @lg {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  > ul {
+    padding: 20px;
+    li {
+      display: block;
+      a {
+        display: block;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #EEEEEE;
+      }
+      &:last-child {
+        border: none;
+      }
+      .sub-menu {
+        margin-left: 1.3em;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "label": "Preset 4",
+  "settings": {
+    "site_color_secondary": "#1d2637",
+    "header_type": "header02",
+    "site_logo": "http://renovation.thememove.com/data/images/logo-2.png",
+    "top_bg_color": "#1d2634",
+    "header_bg_color": "#fff",
+    "header_style_font_color": "#1d2634",
+    "header_style_search_text_color": "#fff",
+    "header_style_minicart_icon_color": "#fff",
+    "header_style_minicart_number_color": "#222",
+    "header_bg_minicart_number_bg": "#fbd232",
+    "social_links_color": "#fff",
+    "social_links_color_hover": "#fff",
+    "nav_spacing_menu_text_padding": {
+      "top": "27px",
+      "bottom": "26px",
+      "left": "40px",
+      "right": "15px"
+    },
+    "nav_bg_menu_background": "#fbd232",
+    "nav_style_menu_text": "#1d2634",
+    "nav_style_menu_text_hover": "#fff",
+    "nav_bg_menu_text_bg": "#fbd232",
+    "nav_bg_menu_text_bg_hover": "#1d2634",
+    "nav_style_sub_menu_text_hover": "#1d2634",
+    "button_style_link_color": "#1d2634",
+    "button_style_link_color_hover": "#fff",
+    "button_bg_color": "#fbd232",
+    "button_bg_color_hover": "#1d2736",
+    "footer_bg_color": "rgba(29, 39, 55, 0.9)",
+    "copyright_bg_color": "#1d2637"
+  }
+}
