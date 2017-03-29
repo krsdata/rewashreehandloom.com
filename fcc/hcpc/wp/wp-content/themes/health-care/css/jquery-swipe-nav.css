@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* CSS Document */
+#swipeNav{
+	width:500px;
+	color: #ffffff;
+	background: #b39964; /* Old browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b39964', endColorstr='#b39964',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow: -6px 0px 2px 0 rgba(30, 30, 30,0.2) inset;
+    -moz-box-shadow: -6px 0px 2px 0 rgba(30, 30, 30,0.2) inset;
+    box-shadow: -6px 0px 2px 0 rgba(30, 30, 30,0.2) inset;
+    -webkit-overflow-scrolling: touch;
+}
+#swipeNav li{
+	list-style-position: inside;
+	list-style-type: none;
+	padding: 6px 12px;
+}
+#swipeNav a{
+	box-sizing: border-box;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0;
+    text-align: unset;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+    border-bottom:2px solid rgba(0, 0, 0, 0)
+}
+#swipeNav a:hover {
+    border-bottom: 2px solid #ffffff;
+}
+#menuBtn{
+	cursor: pointer;
+}
+@media screen and (max-width:480px) {
+	#swipeNav{
+		width:250px;
+	}
+}
