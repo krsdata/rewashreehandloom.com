@@ -6,9 +6,9 @@ function autolife_enque_scripts(){
 
 	wp_enqueue_style( 'jquery-swipe-nav-css', get_template_directory_uri() . '/css/jquery-swipe-nav.css' );
 
-	if(!is_home()){
+	/*if(!is_home()){
 	  wp_enqueue_style( 'main-style', get_template_directory_uri() . '/css/main-style.css' );
-	}
+	}*/
 
 	wp_enqueue_style( 'jquery-ui-css', get_template_directory_uri() . '/css/jquery-ui.css' );
 
@@ -244,45 +244,7 @@ function countdown_title($title){
 }
 add_filter( 'wp_title', 'countdown_title' );
 
- /* custom post type News */
-
-function media_and_events_post_type() {
-    register_post_type( 'media_and_events',
-      array(
-        'taxonomies'  => array('media_events_cat' ),
-        'labels' => array(
-          'name' => __( 'Media and Events' ),
-          'singular_name' => __( 'Media and Event' )
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'capability_type' => 'post',
-        'rewrite' => array( 'slug' => 'media_and_events' ),
-        'exclude_from_search' => true,
-        'hierarchical' => true,
-        'rewrite' => array( 'slug' => 'media_events_cat' ),
-        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-        'query_var' => true
-      )
-    );
-  }
-  add_action( 'init', 'media_and_events_post_type' );
-
-  function media_and_events_init() {
-    register_taxonomy(
-      'media_events_cat',
-      'media_and_events',
-      array(
-        'label' => __( 'Media and Events Category' ),
-         'sort' => true,
-              'hierarchical' => true,
-        'name' => __( 'Media and Events Category' ),
-        'rewrite' => array( 'slug' => 'media_events_cat' ),
-        'supports' => array( 'developer', 'when developed', 'media_events_cat' ),
-      )
-    );
-  }
- add_action( 'init', 'media_and_events_init' );
+include('includes/custom-post-type.php');
 // shortcode to show latest post
 function show_latest_news_fun(){
 	$rtn_str='';

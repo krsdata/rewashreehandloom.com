@@ -314,7 +314,7 @@ h2.font-size-30{
     width: 100%;
     border-bottom: 1px solid #ccc;
     text-align: center;
-background-color: #10120f;
+    background-color: #10120f;
 }
 .main-menu a {
     color: #ffffff;
@@ -617,7 +617,8 @@ h1, .alpha {
 .latest-news li{
     display: inline-flex;
 }
-.arrow-before li::before {
+.arrow-before li::before{
+/*.inner-pages-widgets td:before */
     color: #ff6500;
      display: inline-block;
     font-size: 14px;
@@ -629,6 +630,13 @@ h1, .alpha {
 }
 /*-- Inner Pages Style
 ----------------------------------------------------------*/
+
+#pageBody {
+    overflow: hidden;
+    padding: 16px 10px 40px;
+    border-top: 13px solid #f6e055;
+    background: #fff;
+}
 .inner-pages-widgets a:link, .inner-pages-widgets a:visited {
     color: #333333;
     cursor: pointer;
@@ -641,7 +649,7 @@ td.secondnavpadding {
 }
 .textsmlmgrey {
     color: #687379;
-    font-size: 70%;
+    font-size: 11px;
 }
 
 h1.section1text {
@@ -651,18 +659,21 @@ h1.section1text {
     color: #fe019a;
 }
 h2.textmgrey {
-    font-size: 80% !important;
+    font-size: 14px;
     font-weight: normal;
     margin-bottom: 10px;
 }
 .textmgrey {
     color: #000000;
 }
-
+.inner-pages-widgets table tr table {
+    display: none;
+}
 #pageBody p {
     margin-bottom: 10px;
     color: #687379;
     font-size: 75%;
+    background: #fff;
 }
 
 .generallink:link, .generallink:active, .generallink:visited, .generallink:visited:hover, .generallink:hover {
@@ -679,7 +690,7 @@ hr.hrlgrey {
 }
 
 .secondnavpadding, .text {
-    font-size: 75%;
+    font-size: 12px;
 }
 
 a.textblack {
@@ -696,10 +707,14 @@ td.text {
     border-style: solid none;
     border-width: 1px medium;
 }
-.text {
-}
 th, td {
-    padding: 5px;
+    padding: 2px;
+}
+.lgrey{
+    background: #e5e5e5 none repeat scroll 0 0;    
+}
+.lgrey > img {
+    display: none;
 }
 /*-- Text elements
 ----------------------------------------------------------*/1

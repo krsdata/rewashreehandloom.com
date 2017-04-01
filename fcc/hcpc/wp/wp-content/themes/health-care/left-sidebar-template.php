@@ -29,7 +29,7 @@ get_header();
                                 js = d.createElement(s); js.id = id;
                                 js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
                                 fjs.parentNode.insertBefore(js, fjs);
-                            } (document, 'script', 'facebook-jssdk'));</script>Â Â
+                            } (document, 'script', 'facebook-jssdk'));</script>
 <!--google-->
 <div class="g-plus" data-action="share" data-annotation="bubble">&gt;</div>
 <!-- Place this tag after the last share tag. -->
@@ -44,11 +44,11 @@ get_header();
                                 var s = document.getElementsByTagName('script')[0];
                                 s.parentNode.insertBefore(po, s);
                             })();
-                        </script>Â Â
+                        </script>
 <!-- linked in -->
 <script type="IN/Share" data-counter="right" data-showzero="true"></script><script src="//platform.linkedin.com/in.js" type="text/javascript">
                             lang: en_US                  
-                        </script>Â
+                        </script>
 <!--twitter-->
 <a class="twitter-share-button" href="https://twitter.com/share">Tweet</a>
 <script>

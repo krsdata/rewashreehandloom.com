@@ -14,22 +14,15 @@ echo get_header();
 		                    <label for="searchProfession" class="visuallyhidden">Profession</label>
 		                    <select name="ctl00$searchProfession" id="ctl00_searchProfession">
 								<option value="">Choose a profession</option>
+								<?php 
+								$terms = get_terms( array('taxonomy' => 'profession_cat',
+ 	 								'hide_empty' => false) );
+                                                                foreach($terms as $term){
+							          echo '<option value="'.$term->id.'">'.$term->name.'</option>';
+								}				
+					
+								?>
 								<option value="AS">Arts therapist</option>
-								<option value="BS">Biomedical scientist</option>
-								<option value="CH">Chiropodist / podiatrist</option>
-								<option value="CS">Clinical scientist</option>
-								<option value="DT">Dietitian</option>
-								<option value="HAD">Hearing aid dispenser</option>
-								<option value="OT">Occupational therapist</option>
-								<option value="ODP">Operating department practitioner</option>
-								<option value="OR">Orthoptist</option>
-								<option value="PA">Paramedic</option>
-								<option value="PH">Physiotherapist</option>
-								<option value="PYL">Practitioner psychologist</option>
-								<option value="PO">Prosthetist / orthotist</option>
-								<option value="RA">Radiographer</option>
-								<option value="SW">Social worker in England</option>
-								<option value="SL">Speech and language therapist</option>
 							</select>
 	                    </li><!--
 	                    --><li class="grid__item  lap-and-up-one-half">
@@ -89,6 +82,7 @@ echo get_header();
 										echo '</div>';
 									}
 								}
+								wp_reset_query();
 							}
 							echo '</div>';
 						?>
