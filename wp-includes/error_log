@@ -1,0 +1,10 @@
+[03-Apr-2017 23:49:38 UTC] PHP Fatal error:  Class 'WP_Dependencies' not found in /home/rewashree/public_html/wp-includes/class.wp-styles.php on line 18
+[03-Apr-2017 23:53:19 UTC] PHP Warning:  require_once(ABSPATHWPINC/customize/class-wp-customize-nav-menus-panel.php): failed to open stream: No such file or directory in /home/rewashree/public_html/wp-includes/class-wp-customize-panel.php on line 389
+[03-Apr-2017 23:53:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'ABSPATHWPINC/customize/class-wp-customize-nav-menus-panel.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/rewashree/public_html/wp-includes/class-wp-customize-panel.php on line 389
+[25-Apr-2017 15:08:04 UTC] PHP Fatal error:  Class 'Walker' not found in /home/rewashree/public_html/wp-includes/class-walker-page-dropdown.php on line 17
+[25-Apr-2017 15:08:16 UTC] PHP Fatal error:  Class 'Walker' not found in /home/rewashree/public_html/wp-includes/class-walker-nav-menu.php on line 17
+[25-Apr-2017 15:08:17 UTC] PHP Warning:  require_once(ABSPATHWPINC/class-walker-nav-menu.php): failed to open stream: No such file or directory in /home/rewashree/public_html/wp-includes/nav-menu-template.php on line 11
+[25-Apr-2017 15:08:17 UTC] PHP Fatal error:  require_once(): Failed opening required 'ABSPATHWPINC/class-walker-nav-menu.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/rewashree/public_html/wp-includes/nav-menu-template.php on line 11
+[25-Apr-2017 15:08:32 UTC] PHP Fatal error:  Class 'Text_Diff_Renderer_inline' not found in /home/rewashree/public_html/wp-includes/class-wp-text-diff-renderer-inline.php on line 16
+[25-Apr-2017 15:08:35 UTC] PHP Fatal error:  Class 'Text_Diff_Renderer' not found in /home/rewashree/public_html/wp-includes/class-wp-text-diff-renderer-table.php on line 16
+[25-Apr-2017 15:08:37 UTC] PHP Fatal error:  Class 'Walker' not found in /home/rewashree/public_html/wp-includes/class-walker-page.php on line 17

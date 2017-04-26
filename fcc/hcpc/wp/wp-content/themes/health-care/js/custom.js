@@ -2,19 +2,12 @@ jQuery(document).ready(function($){
 	(function($){
 		/* registration form validation */
 		$.validate({
-		   form : '#rgstrform,#loginform,#resetform,#vehicle-form,#claim-form',
+		   form : '#rgstrform,#loginform,#resetform',
 		   validateOnBlur : false, // disable validation when input looses focus
 		    scrollToTopOnError : false,
 		    modules : 'security',
 	    });
-		
-		$('#claim-submit').click(function(e){
-		   var val=$('#odometer-reading').val();
-		   if(val>200){
-		   		$('#odometer-reading').parent().addClass('has-error').append('<span class="help-block form-error">Odometer Reading Will be Less Than 200K</span>');
-		   		e.preventDefault();
-		   }
-	   	});
+	
 	/* mobile menu function */
 		$('#swipeNav').swipeNav();
 
@@ -36,19 +29,6 @@ jQuery(document).ready(function($){
 			jQuery(this).parents().find('.overlay-bg').removeClass('overlay-show');
 		});
 
-		/* form tabber */
-		jQuery('.show-lreg-forms .forms:first-child').addClass('active');
-		jQuery('#form-tab li:first-child').addClass('active-tab');
-		jQuery('#form-tab li a').click(function(event){
-			event.preventDefault();
-			var rel_id=jQuery(this).attr('rel');
-			jQuery('#form-tab li').removeClass('active-tab');
-			jQuery(this).parent().addClass('active-tab');
-			jQuery(this).parents().find('.forms').removeClass('active');
-			jQuery(this).parents().find('#'+rel_id).addClass('active');
-
-		});
-
 		/* reset form popup */
 		jQuery('.reset-password').click(function(){
 			jQuery(this).parents().find('#login-register-popup').hide();
@@ -56,107 +36,44 @@ jQuery(document).ready(function($){
 			jQuery(this).parent().find('.overlay-bg').addClass('overlay-show');
 		});
 		
-		/* vehicle form */
-		jQuery('#select-year').click(function(){
-			var val= jQuery(this).val();
-			if(val!=''){
-				jQuery('#select-make').removeAttr('disabled');
-			}
-		});
-		jQuery('#select-make').click(function(){
-			var val= jQuery(this).val();
-			if(val!=''){
-				jQuery('#select-model').removeAttr('disabled');
-			}
-		});
-
-		/* claim form */
-		/*jQuery('.claim-form-td a.enabled').click(function(){
-			var height= jQuery('.claim-form').height();
-			jQuery(this).parent().css('height',height);
-			jQuery(this).parent().find('.claim-form').toggle(500);
-			jQuery(this).parent().css('height',0);
-		});*/
-
 		/* subscriber form title change */
 		jQuery('.chargify-form table tr:first-child p').text('Choose A Plan');
 
 		/* date picker */
-		 $( "#datepicker" ).datepicker();	
+    	$( "#datepicker" ).datepicker();	
 
-		 /* fancybox js */
-		 jQuery('#fancybox').fancybox({
-			openEffect	: 'none',
-			closeEffect	: 'none'
-		});
+    	/* set placeholder to top search input field */
+    	jQuery('#searchform input#s').attr('placeholder','search');
 
+        /* hide breadcrum separator for last child */
+	    jQuery('.breadcrumb-container li:last-child a').next().hide();
 
-		 /* extra repair fields show */
-		 var completed_checked=jQuery('#repair-completed-btn input[name="repair_completed"]:checked').val();
-		 if(completed_checked=="Yes"){
-		 	jQuery('.on-yes-repair-completed,.on-yes-commom-fields,.on-yes-common-shop-fields,.common-submit-fields,.completed-repair-upload,.terms-and-conditions').show();
-		 }
-		 else{
-			if(completed_checked=="No"){
-			 	jQuery('.on-No-repair-completed,.completed-repair-upload,.terms-and-conditions,.on-yes-common-shop-fields').show();
-			 	var quote_checked=jQuery('#have-quote-shop-btn input[name="have_quote_shop"]:checked').val();
-				 console.log( 'fvgdf'+quote_checked);
-				 if(quote_checked=="Yes"){
-				 	jQuery('.on-yes-commom-fields,.common-submit-fields').show();
-				 	jQuery('.on-No-have-quote-shop').hide();
-				 }
-				else{
-				 	if(quote_checked=="No"){
-					 	jQuery('.on-No-have-quote-shop,.common-submit-fields').show();
-					}
-				}
-				/*var doing_checked=jQuery('#doing-repair-btn input[name="doing_repair"]:checked').val();
-				if(doing_checked=="Shop"){
-				 	jQuery('.on-yes-common-shop-fields,.common-submit-fields').show();
-				}*/
-		 	}
+	    /* search functio filter */
+	   
+	    jQuery('#RegSearchButton').click(function(){
+	    	var searchProfession = jQuery('#searchProfession option:selected').val();
+	    	var searchRegistration = jQuery('#searchRegistration').val();
+	    	var radioVal = jQuery('input[name="search_option"]:checked').val();
+	    	var match_surname = searchRegistration.match('/^\d/');
+	    	//alert(match_surname);
+	    	if(searchProfession == '' && searchRegistration == '' ){
+	    		alert('Please enter search terms');
+	    	}else if(searchProfession != '' && searchRegistration == '' ){
+	    		if(radioVal == 'surnameRadioButton')
+	    			alert('Please enter a surname');
+	    		else
+	    			alert('Please enter a registration number');
+	    	}else if(searchProfession == '' && searchRegistration != '' ){
+	    		alert("Please Choose a profession");
+	    	}
+	    	
+	    	// }else if(searchRegistration != '' && radioVal == 'surnameRadioButton'  && !searchRegistration.match("/^[a-zA-Z]+$/")){
+	    	// 	alert('Please enter a name, only alphabaticals characters, hyphens and appostrophe allowed');
+	    	// }else if(searchRegistration != '' && radioVal == 'registrationRadioButton'  && !searchRegistration.match('/^[0-9]+$/') && searchRegistration.length<=6){
+	    	// 	alert('Please enter a valid registration number');
+	    	// }
 
-		}
-		
-
-		jQuery('#repair-completed-btn input').on('change', function() {
-		   var radio_val=jQuery(this).val(); 
-		   	if(radio_val=='Yes'){
-		   		jQuery('.on-yes-repair-completed,.on-yes-commom-fields,.on-yes-common-shop-fields,.common-submit-fields,.completed-repair-upload,.terms-and-conditions').show();
-		   		jQuery('.on-No-repair-completed, .on-No-have-quote-shop,.future-repair-upload').hide();
-   		   		jQuery('#quote-no').attr("checked","checked");
-   		   		jQuery('#self').attr("checked","checked");
-   			}
-		   	else{
-		   		jQuery('.on-yes-repair-completed,.on-yes-commom-fields,.completed-repair-upload').hide();
-		   		jQuery('.on-No-repair-completed,.completed-repair-upload,.terms-and-conditions').show();
-		   		jQuery('#quote-no').attr("checked","checked");
-		   		jQuery(this).parents().find('.on-No-have-quote-shop,.common-submit-fields').show();
-		   	}
-		});
-
-		jQuery('#have-quote-shop-btn input').on('change', function() {
-		   var radio_valu=jQuery(this).val(); 
-		   	if(radio_valu=='Yes'){
-		   		jQuery('.on-yes-commom-fields,.common-submit-fields').show();
-		   		jQuery('.on-No-have-quote-shop').hide();
-		   	}
-		   	else{
-		   		jQuery('.on-yes-commom-fields').hide();
-		   		jQuery('.on-No-have-quote-shop,.common-submit-fields').show();
-		   	}
-		});
-
-		/*jQuery('#doing-repair-btn input').on('change', function() {
-		   var radio_valu=jQuery(this).val(); 
-		   	if(radio_valu=='Shop'){
-		   		jQuery('.on-yes-common-shop-fields,.common-submit-fields').show();
-		   	}
-		   	else{
-		   		jQuery('.on-yes-common-shop-fields').hide();
-		   	}
-		});
-*/
-	
+	    });
 	}(jQuery));
 });
+

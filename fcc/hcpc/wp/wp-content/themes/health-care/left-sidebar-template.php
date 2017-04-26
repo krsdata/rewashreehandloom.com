@@ -11,7 +11,10 @@ get_header();
 					 dynamic_sidebar('left-sidebare'); 
 		 	endif; ?>
 		</div>
-		<div class="col-sm-9">
+		<div class="col-sm-9 page-content">
+             <?php
+               echo do_shortcode( '[breadcrumb]' ); // breadcrum 
+            ?>
 			<?php
 				if(have_posts()):
 					while(have_posts()):

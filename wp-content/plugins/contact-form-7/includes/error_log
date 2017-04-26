@@ -1,1 +1,5 @@
 [25-Mar-2017 15:58:59 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/rewashree/public_html/wp-content/plugins/contact-form-7/includes/upgrade.php on line 3
+[25-Apr-2017 14:56:44 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/rewashree/public_html/wp-content/plugins/contact-form-7/includes/upgrade.php on line 3
+[25-Apr-2017 14:56:48 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/rewashree/public_html/wp-content/plugins/contact-form-7/includes/mail.php on line 199
+[25-Apr-2017 14:56:53 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/rewashree/public_html/wp-content/plugins/contact-form-7/includes/controller.php on line 3
+[25-Apr-2017 14:57:27 UTC] PHP Fatal error:  Call to undefined function add_filter() in /home/rewashree/public_html/wp-content/plugins/contact-form-7/includes/capabilities.php on line 3
